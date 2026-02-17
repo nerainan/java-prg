@@ -1,0 +1,30 @@
+import java.util.*;
+
+class Solution {
+
+    static String replaceChar(String str, char oldChar, char newChar) {
+
+        if (str.length() == 0) {
+            return "";
+        }
+
+        char first = str.charAt(0);
+        
+        if (first == oldChar) {
+            first = newChar;
+        }
+        return first + replaceChar(str.substring(1), oldChar, newChar);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String str = sc.nextLine();
+        char oldChar = sc.next().charAt(0);
+        char newChar = sc.next().charAt(0);
+
+        String result = replaceChar(str, oldChar, newChar);
+
+        System.out.println(result);
+    }
+}
