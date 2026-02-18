@@ -1,0 +1,38 @@
+import java.util.*;
+
+class AreaCalculator {
+    
+    int area(int s) { 
+        
+        return s * s;
+    }
+    
+    int area(int l, int b) {
+        
+        return l * b; 
+        
+    }
+    double area(double r) {
+        
+        return 3.14 * r * r;
+        
+    }
+}
+
+public class Solution {
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        AreaCalculator a = new AreaCalculator();
+        String shape = sc.next();
+
+        if(shape.equalsIgnoreCase("Square"))
+            System.out.println(a.area(sc.nextInt()));
+        
+        else if(shape.equalsIgnoreCase("Rectangle"))
+            System.out.println(a.area(sc.nextInt(), sc.nextInt()));
+        
+        else
+            System.out.println(a.area(sc.nextDouble()));
+    }
+}
