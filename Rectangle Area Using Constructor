@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+
+
+class  Rectangle{
+    int length;
+    int breadth;
+    
+    Rectangle( int l, int b){
+        length = l;
+        breadth = b;
+        
+    }
+    void calculateArea(){
+        int area = length * breadth;
+        System.out.println("Area:" + area);
+        
+    }
+    
+}
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int length = sc.nextInt();
+        int breadth = sc.nextInt();
+        
+        Rectangle r = new Rectangle(length , breadth);
+        r.calculateArea();
+    }
+}
