@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+
+abstract class FoodItem {
+    abstract void getPrice(int quantity);
+}
+class Pizza extends FoodItem {
+    void getPrice(int quantity) {
+        System.out.println(quantity * 200 + " rupees");
+    }
+}
+
+class Burger extends FoodItem {
+    void getPrice(int quantity) {
+        System.out.println(quantity * 100 + " rupees");
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String item = sc.nextLine();
+        int quantity = sc.nextInt();
+
+        FoodItem f;
+
+        if (item.equals("Pizza"))
+            f = new Pizza();
+        else
+            f = new Burger();
+
+        f.getPrice(quantity);
+    }
+}
