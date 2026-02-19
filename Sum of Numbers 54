@@ -1,0 +1,36 @@
+import java.util.*;
+
+public class Solution {
+
+    int sum(int a, int b) {
+        return a + b;
+    }
+
+    int sum(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    double sum(double a, double b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Solution s = new Solution();
+
+        if (sc.hasNextInt()) {
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            if (sc.hasNextInt()) {
+                int c = sc.nextInt();
+                System.out.println(s.sum(a, b, c));
+            } else {
+                System.out.println(s.sum(a, b));
+            }
+        } else {
+            double a = sc.nextDouble();
+            double b = sc.nextDouble();
+            System.out.println(s.sum(a, b));
+        }
+    }
+}
